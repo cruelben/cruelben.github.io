@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruelben | Portfolio</title>
+    <style>
+        /* Variabili di colore per il gradiente dinamico */
+        :root {
+            --color-green: #28a745; /* Verde GitHub */
+            --color-blue: #007bff;  /* Azzurro GitHub */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #333;
+            
+            /* Gradiente di sfondo animato */
+            background: linear-gradient(-45deg, var(--color-green), var(--color-blue), var(--color-green), var(--color-blue));
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        /* Animazione fluida per i colori dello sfondo */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .profile-container {
+            /* Contenitore semitrasparente per far risaltare il testo */
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px); /* Effetto vetro sfocato */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            /* Bordo sfocato alla foto */
+            box-shadow: 0 0 20px rgba(255,255,255,0.7); 
+        }
+
+        h1 {
+            font-weight: 400;
+            margin: 0;
+            color: #111;
+        }
+
+        p {
+            color: #555;
+            margin: 0.5rem 0 2rem;
+            line-height: 1.6;
+        }
+
+        .links a {
+            text-decoration: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .links a:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- La tua foto profilo che si aggiorna automaticamente -->
+        <img src="https://avatars.githubusercontent.com/u/44285318?v=4" alt="Cruelben" class="profile-img">
+        
+        <h1>Hello, my name is Cruelben.</h1>
+        <p>Surviving Cobol programmer (yes, we still exist!), cryptography systems, and tech enthusiast.</p>
+        
+        <div class="links">
+            <a href="https://github.com/cruelben" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+</body>
+</html>
