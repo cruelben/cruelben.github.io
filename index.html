@@ -1,108 +1,132 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruelben | Portfolio</title>
-    
-    <!-- Favicon personalizzata -->
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/44285318?s=60&v=4">
-
-    <style>
-        /* Variabili di colore per il gradiente dinamico */
-        :root {
-            --color-green: #28a745; /* Verde GitHub */
-            --color-blue: #007bff;  /* Azzurro GitHub */
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            color: #333;
-            
-            /* Gradiente di sfondo animato */
-            background: linear-gradient(-45deg, var(--color-green), var(--color-blue), var(--color-green), var(--color-blue));
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
-        }
-
-        /* Animazione fluida per i colori dello sfondo */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .profile-container {
-            /* Contenitore semitrasparente per far risaltare il testo */
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px); /* Effetto vetro sfocato */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 20px;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 2rem;
-            /* Bordo sfocato alla foto */
-            box-shadow: 0 0 20px rgba(255,255,255,0.7); 
-        }
-
-        h1 {
-            font-weight: 400;
-            margin: 0;
-            color: #111;
-        }
-
-        p {
-            color: #555;
-            margin: 0.5rem 0 2rem;
-            line-height: 1.6;
-        }
-
-        .links a {
-            text-decoration: none;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .links a:hover {
-            background-color: #555;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07110e">
+<meta name="description" content="Cruelben — Bruno's corner of the internet. COBOL survivor, cryptography systems and technology enthusiast.">
+<title>Cruelben | Digital Corner</title>
+<link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/44285318?s=60&v=4">
+<style>
+:root{--bg:#07110e;--panel:rgba(13,27,22,.82);--green:#00ff9d;--green2:#7dffc6;--muted:#a3b8ad;--line:rgba(0,255,157,.2)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#eefbf4;background:radial-gradient(ellipse at 50% 0%,#123628 0%,#091711 43%,#050a08 100%);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:36px 18px;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,255,157,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,157,.035) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.glow{position:fixed;width:460px;height:460px;border-radius:50%;background:rgba(0,255,157,.08);filter:blur(100px);top:10%;left:calc(50% - 230px);pointer-events:none}
+.page{position:relative;width:min(100%,980px);z-index:1}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding:0 4px}
+.brand{font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);font-weight:800}.brand span{color:#e9fff4}
+.avatar-mini{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--green);box-shadow:0 0 20px rgba(0,255,157,.22);transition:transform .25s}
+.avatar-mini:hover{transform:scale(1.07)}
+.card{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(24px,5vw,54px);border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(16,37,28,.92),rgba(6,17,12,.94));box-shadow:0 28px 90px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.035);backdrop-filter:blur(14px);overflow:hidden}
+.copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0}
+@keyframes pulse{50%{opacity:.35;box-shadow:0 0 3px var(--green)}}
+h1{font-size:clamp(2.3rem,5.2vw,4.3rem);line-height:1.04;letter-spacing:-.055em;margin:0 0 18px;font-weight:760}h1 .name{color:var(--green);text-shadow:0 0 28px rgba(0,255,157,.15)}
+.intro{font-size:1.04rem;line-height:1.75;color:#bfd0c6;margin:0 0 14px;max-width:42ch}.tagline{color:var(--muted);line-height:1.7;font-size:.93rem;margin:0 0 28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 19px;border-radius:12px;text-decoration:none;font-size:.92rem;font-weight:750;border:1px solid transparent;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--green);color:#04140c;box-shadow:0 8px 26px rgba(0,255,157,.17)}.btn-primary:hover{box-shadow:0 10px 32px rgba(0,255,157,.28)}
+.github-icon{width:18px;height:18px;fill:currentColor}
+.avatar-panel{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0;padding:16px 0}
+.avatar-frame{position:relative;width:min(100%,390px);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,255,157,.26);border-radius:24px;background:radial-gradient(circle at 50% 46%,rgba(0,255,157,.12),rgba(0,0,0,.14) 60%),rgba(0,0,0,.18);overflow:hidden;box-shadow:inset 0 0 60px rgba(0,255,157,.045),0 0 42px rgba(0,255,157,.045)}
+.avatar-frame:before,.avatar-frame:after{content:"";position:absolute;inset:14px;border:1px solid rgba(0,255,157,.1);border-radius:16px;pointer-events:none}.avatar-frame:after{inset:0;border:0;border-radius:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 4px,rgba(0,0,0,.12) 5px);pointer-events:none}
+#avatarCanvas{display:block;width:100%;height:100%;position:relative;z-index:1;cursor:pointer;touch-action:manipulation;outline:none}#avatarCanvas:focus-visible{outline:2px solid var(--green);outline-offset:-8px;border-radius:20px}
+.avatar-label{display:flex;align-items:center;gap:8px;color:#91b8a3;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;margin-top:18px}.equalizer{height:14px;display:flex;align-items:center;gap:3px}.equalizer i{display:block;width:3px;height:5px;background:var(--green);border-radius:3px}.speaking .equalizer i{animation:bars .45s ease-in-out infinite alternate}.speaking .equalizer i:nth-child(2){animation-delay:.1s}.speaking .equalizer i:nth-child(3){animation-delay:.2s}.speaking .equalizer i:nth-child(4){animation-delay:.06s}@keyframes bars{to{height:14px}}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:19px 5px 0;color:#6f8a7a;font-size:.76rem;letter-spacing:.04em}.footer a{color:#9fc8b1;text-decoration:none}.footer a:hover{color:var(--green)}
+@media(max-width:760px){body{padding:18px 12px}.card{grid-template-columns:1fr;gap:10px;padding:27px 22px}.copy{order:1}.avatar-panel{order:0;padding:0 0 12px}.avatar-frame{width:min(100%,310px)}.avatar-label{margin-top:12px}h1{font-size:clamp(2.5rem,10vw,3.5rem)}.intro{font-size:1rem}.footer{align-items:flex-start;flex-direction:column}.topbar{margin-bottom:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
-
-    <div class="profile-container">
-        <!-- La tua foto profilo che si aggiorna automaticamente -->
-        <img src="https://avatars.githubusercontent.com/u/44285318?v=4" alt="Cruelben" class="profile-img">
-        
-        <h1>Hello, my name is Bruno, aka cruelben—don't ask me why.</h1>
-        <p>Surviving Cobol programmer (yes, we still exist!), cryptography systems, and tech enthusiast.</p>
-        
-        <div class="links">
-            <a href="https://github.com/cruelben" target="_blank">GitHub</a>
-        </div>
+<div class="glow" aria-hidden="true"></div>
+<main class="page">
+  <header class="topbar">
+    <div class="brand">CRUEL<span>BEN</span> <span style="color:#729282">/ DIGITAL CORNER</span></div>
+    <a href="https://github.com/cruelben" target="_blank" rel="noopener noreferrer" aria-label="Open Cruelben's GitHub profile"><img class="avatar-mini" src="https://avatars.githubusercontent.com/u/44285318?v=4" alt="Bruno's GitHub profile picture"></a>
+  </header>
+  <section class="card" aria-labelledby="main-title">
+    <div class="copy">
+      <h1 id="main-title">Hello, I'm <span class="name">Bruno.</span><br>AKA cruelben.</h1>
+      <p class="intro">“Don't ask me why.”</p>
+      <p class="tagline">COBOL survivor (yes, we still exist!), cryptography systems enthusiast, and lifelong technology explorer. I enjoy figuring out how things work—and occasionally making them do something unexpected.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/cruelben" target="_blank" rel="noopener noreferrer">
+          <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.51 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.28-2.6 5.23-5.08 5.5.4.35.75 1.03.75 2.08V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z"/></svg>
+          Explore my GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
-
+    <div class="avatar-panel" id="avatarPanel">
+      <div class="avatar-frame"><canvas id="avatarCanvas" width="420" height="420" role="button" tabindex="0" aria-label="Talk with Bruno’s animated avatar" title="Talk with me"></canvas></div>
+      <div class="avatar-label"><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="avatarStatus">Digital avatar · standing by</span></div>
+    </div>
+  </section>
+  <footer class="footer"><span>© <span id="year"></span> Bruno “Cruelben” Benevolo</span><span>Built with curiosity, code &amp; a little green glow.</span></footer>
+</main>
+<script>
+(() => {
+  const canvas = document.getElementById('avatarCanvas');
+  const ctx = canvas.getContext('2d');
+  const panel = document.getElementById('avatarPanel');
+  const status = document.getElementById('avatarStatus');
+  const intro = "Hello, my name is Bruno, aka cruelben—don't ask me why. I'm a COBOL survivor, a cryptography systems enthusiast, and a curious mind exploring the world of technology. Take a look at my GitHub and see what I'm working on.";
+  let t = 0, speaking = false, mouth = 0, targetMouth = 0, blink = 0, blinkTimer = 150, utterance = null;
+  const particles = Array.from({length:42}, () => ({x:Math.random()*420,y:Math.random()*420,r:Math.random()*2+0.5,s:Math.random()*0.45+0.12,a:Math.random()*0.55+0.15,p:Math.random()*6.28}));
+  function line(x1,y1,x2,y2,alpha=1){ctx.strokeStyle=`rgba(0,255,157,${alpha})`;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+  function draw(){
+    const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);t+=0.018;
+    particles.forEach(p=>{p.y-=p.s;p.p+=.018;p.x+=Math.sin(p.p)*.25;if(p.y<0){p.y=h;p.x=Math.random()*w}ctx.globalAlpha=p.a;ctx.fillStyle='#00ff9d';ctx.shadowBlur=10;ctx.shadowColor='#00ff9d';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()});ctx.globalAlpha=1;ctx.shadowBlur=0;
+    const cx=210,cy=205,breath=Math.sin(t*1.6)*2;
+    const halo=ctx.createRadialGradient(cx,cy,30,cx,cy,180);halo.addColorStop(0, speaking?'rgba(0,255,157,.17)':'rgba(0,255,157,.075)');halo.addColorStop(1,'rgba(0,255,157,0)');ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);
+    // Head outline and subtle inner contour
+    ctx.save();ctx.translate(0,breath);ctx.shadowBlur=20;ctx.shadowColor='rgba(0,255,157,.42)';ctx.strokeStyle='#00ff9d';ctx.lineWidth=2.6;
+    ctx.beginPath();ctx.moveTo(125,145);ctx.quadraticCurveTo(135,85,210,82);ctx.quadraticCurveTo(285,85,295,145);ctx.lineTo(287,242);ctx.quadraticCurveTo(278,296,210,310);ctx.quadraticCurveTo(142,296,133,242);ctx.closePath();ctx.stroke();ctx.shadowBlur=0;
+    ctx.strokeStyle='rgba(0,255,157,.38)';ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(143,150);ctx.quadraticCurveTo(150,105,210,102);ctx.quadraticCurveTo(270,105,277,150);ctx.stroke();
+    // Side panels
+    ctx.strokeStyle='rgba(0,255,157,.72)';ctx.lineWidth=2;ctx.strokeRect(112,170,18,48);ctx.strokeRect(290,170,18,48);line(115,181,125,181,.9);line(295,181,305,181,.9);
+    // Eyes
+    blinkTimer--;if(blinkTimer<=0){blink=5;blinkTimer=125+Math.random()*150}if(blink>0)blink--;
+    ctx.shadowBlur=13;ctx.shadowColor='#00ff9d';ctx.strokeStyle='#00ff9d';ctx.lineWidth=3;
+    if(blink>0){line(157,181,190,181);line(230,181,263,181)}else{ctx.fillStyle='#00ff9d';ctx.beginPath();ctx.moveTo(157,172);ctx.lineTo(190,172);ctx.lineTo(185,193);ctx.lineTo(162,193);ctx.closePath();ctx.fill();ctx.beginPath();ctx.moveTo(230,172);ctx.lineTo(263,172);ctx.lineTo(258,193);ctx.lineTo(235,193);ctx.closePath();ctx.fill();ctx.fillStyle='#062016';ctx.fillRect(169,176,9,12);ctx.fillRect(242,176,9,12)}ctx.shadowBlur=0;
+    // Nose and mouth
+    ctx.strokeStyle='rgba(0,255,157,.55)';ctx.lineWidth=1.7;ctx.beginPath();ctx.moveTo(210,191);ctx.lineTo(203,218);ctx.lineTo(215,220);ctx.stroke();
+    mouth+=(targetMouth-mouth)*.32;const open= speaking?Math.max(mouth,0.07+Math.abs(Math.sin(t*8))*.18):0;
+    ctx.strokeStyle='#00ff9d';ctx.lineWidth=2.5;ctx.shadowBlur=14;ctx.shadowColor='#00ff9d';
+    if(open<.09){ctx.beginPath();ctx.moveTo(177,245);ctx.quadraticCurveTo(210,250,243,245);ctx.stroke()}else{ctx.fillStyle='rgba(0,15,9,.92)';ctx.beginPath();ctx.ellipse(210,245,31,5+open*29,0,0,Math.PI*2);ctx.fill();ctx.stroke();if(open>.28){ctx.fillStyle='rgba(0,255,157,.65)';ctx.beginPath();ctx.ellipse(210,245+open*5,17,2+open*8,0,0,Math.PI*2);ctx.fill()}}
+    ctx.shadowBlur=0;
+    // Circuit marks and chest collar
+    line(149,264,166,279,.55);line(166,279,183,279,.55);line(271,264,254,279,.55);line(254,279,237,279,.55);line(185,291,235,291,.7);line(192,300,228,300,.4);
+    ctx.restore();
+    // HUD corner marks
+    ctx.strokeStyle='rgba(0,255,157,.55)';ctx.lineWidth=2;line(25,48,25,25);line(25,25,48,25);line(372,25,395,25);line(395,25,395,48);line(25,372,25,395);line(25,395,48,395);line(372,395,395,395);line(395,372,395,395);
+    ctx.fillStyle='rgba(0,255,157,.65)';ctx.font='11px monospace';ctx.textAlign='left';ctx.fillText('CB-01',39,45);ctx.textAlign='right';ctx.fillText(speaking?'VOICE ACTIVE':'SYSTEM READY',381,386);
+    // Interactive call-to-action, drawn directly inside the avatar canvas
+    ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold 14px monospace';ctx.shadowBlur=16;ctx.shadowColor='#00ff9d';ctx.strokeStyle=speaking?'rgba(0,255,157,.95)':'rgba(0,255,157,.58)';ctx.lineWidth=1.4;ctx.beginPath();ctx.roundRect(126,324,168,40,10);ctx.stroke();ctx.fillStyle='#baffdf';ctx.fillText(speaking?'STOP TALKING':'TALK WITH ME',210,344);ctx.restore();
+    requestAnimationFrame(draw);
+  }
+  function stopSpeech(){
+    if('speechSynthesis' in window) window.speechSynthesis.cancel();
+    speaking=false;targetMouth=0;panel.classList.remove('speaking');status.textContent='Digital avatar · standing by';
+  }
+  function speak(){
+    if(!('speechSynthesis' in window)){
+      status.textContent='Speech synthesis is not supported by this browser';
+      return;
+    }
+    if(speaking){stopSpeech();return}
+    window.speechSynthesis.cancel();utterance=new SpeechSynthesisUtterance(intro);utterance.lang='en-US';utterance.rate=.93;utterance.pitch=1.05;utterance.volume=1;
+    utterance.onstart=()=>{speaking=true;panel.classList.add('speaking');status.textContent='Speaking · English'};
+    utterance.onboundary=(e)=>{if(e.name==='word'){targetMouth=.35+Math.random()*.65;setTimeout(()=>{targetMouth=.08+Math.random()*.16},130)}};
+    utterance.onend=()=>{speaking=false;targetMouth=0;panel.classList.remove('speaking');status.textContent='Introduction complete'};
+    utterance.onerror=()=>{stopSpeech();status.textContent='Speech could not start — check your browser voice settings'};
+    window.speechSynthesis.speak(utterance);
+  }
+  canvas.addEventListener('click',speak);
+  canvas.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter'||event.key===' '){event.preventDefault();speak()}
+  });
+  window.addEventListener('beforeunload',()=>{if('speechSynthesis' in window)window.speechSynthesis.cancel()});
+  document.getElementById('year').textContent=new Date().getFullYear();draw();
+})();
+</script>
 </body>
 </html>
